@@ -1,6 +1,7 @@
+**Báo cáo đánh giá hạ tầng & hiệu năng mô hình LightGBM trên GCP**
 1. **Thời gian triển khai & Khởi tạo (Deployment & Bootstrap)**: Quá trình chạy terraform apply hạ tầng (VPC, Cloud NAT, Global Forwarding Rule) hoàn tất trong khoảng **4 phút 30 giây**, và mất thêm khoảng **2–3 phút** để kết nối SSH qua IAP cài đặt môi trường thư viện ML.
 
-2. **Thời gian huấn luyện & Chất lượng mô hình****: Quá trình tải dữ liệu mất **1.83s**; thời gian huấn luyện mô hình LightGBM trên 2 vCPU của node e2-medium diễn ra nhanh chóng trong **2.12s, đạt chỉ số phân tách **AUC-ROC = 0.9367.
+2. **Thời gian huấn luyện & Chất lượng mô hình****: Quá trình tải dữ liệu mất **1.83s**; thời gian huấn luyện mô hình LightGBM trên 2 vCPU của node e2-medium diễn ra nhanh chóng trong **2.12s**, đạt chỉ số phân tách **AUC-ROC = 0.9367**.
 
 3. **Đánh giá Bỏ sót & Cảnh báo nhầm (Precision & Recall)**: Mô hình đạt **Recall = 0.8673** (bắt trúng ~86.7% các vụ gian lận, tỷ lệ bỏ sót thấp) và **Precision = 0.6250** (trong số các ca bị gắn cờ gian lận thì có 62.5% là chính xác, còn lại ~37.5% là cảnh báo nhầm ở mức chấp nhận được).
 
